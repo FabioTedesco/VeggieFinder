@@ -3,7 +3,7 @@ import Searchbar from "./Searchbar";
 
 const Hero = () => {
   return (
-    <div className="flex justify-center items-center bg-lime-300 h-60">
+    <div className="flex justify-center items-center bg-lime-300 h-40">
       <Searchbar />
     </div>
   );

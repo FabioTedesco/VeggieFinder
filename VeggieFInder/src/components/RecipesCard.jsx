@@ -1,20 +1,22 @@
 import React from "react";
 
-const RecipesCard = () => {
-  return (
-    <div>
+const RecipesCard = ({ recipe }) => {
+  return recipe.map((recipe) => (
+    <div
+      className="flex flex-col items-center max-w-sm rounded overflow-hidden shadow-lg bg-slate-200 scale-90"
+      key={recipe.id}
+    >
       <img
-        src="https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dmVnZXRlcmlhbiUyMHJlY2lwZXxlbnwwfDB8MHx8fDI%3D"
+        className="w-4/5 h-48 object-cover rounded mt-2"
+        src={recipe.img}
         alt="ricetta"
       />
-      <h2>Titolo</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-        assumenda doloribus odio magnam laboriosam fugit provident maiores totam
-        aliquid inventore?
-      </p>
+      <div className="text-center">
+        <h1 className="font-bold text-xl my-2">{recipe.title}</h1>
+        <p className="text-gray-700 text-base mb-2">{recipe.description}</p>
+      </div>
     </div>
-  );
+  ));
 };
 
 export default RecipesCard;
