@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Recipes from "./components/Recipes";
 import Footer from "./components/Footer";
+import GetData from "./components/GetData";
 
 function App() {
   const recipe = [
@@ -47,6 +48,7 @@ function App() {
       <Navbar />
       <Hero />
       <Recipes recipes={recipe} />
+      <GetData />
       <Footer />
     </div>
   );

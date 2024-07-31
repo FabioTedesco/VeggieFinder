@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -6,9 +7,15 @@ const Navbar = () => {
       <div className="underline">Navbar left</div>
       <div>
         <ul className="flex mx-5 underline">
-          <li className="p-3">Home</li>
-          <li className="p-3">About</li>
-          <li className="p-3">Contacts</li>
+          <li className="p-3">
+            <Link to={"/"}>Home</Link>
+          </li>
+          <li className="p-3">
+            <Link to={"/About"}>About</Link>
+          </li>
+          <li className="p-3">
+            <Link to={"/Contacts"}>Contacts</Link>
+          </li>
           <li className="p-3">Favorites</li>
         </ul>
       </div>
