@@ -8,6 +8,7 @@ import About from "./pages/About.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import Recipes from "./components/Recipes.jsx";
 import RecipesCard from "./components/RecipesCard.jsx";
+import RecipeDetails from "./components/RecipeDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
     path: "/RecipesCard",
     element: <Recipes />,
   },
-  // {
-  //   path: "/RecipesCard/:RecipeID",
-  //   element: <RecipesCard />,
-  // },
+  {
+    path: "/Favorites",
+    element: <RecipeDetails />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -16,7 +16,9 @@ const Navbar = () => {
           <li className="p-3">
             <Link to={"/Contacts"}>Contacts</Link>
           </li>
-          <li className="p-3">Favorites</li>
+          <li className="p-3">
+            <Link to={"/Favorites"}>Favorites</Link>
+          </li>
         </ul>
       </div>
     </nav>
