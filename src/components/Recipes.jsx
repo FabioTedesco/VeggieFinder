@@ -1,9 +1,6 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import RecipesCard from "./RecipesCard";
 import { GlobalContext } from "../store/GlobalContext";
-import Modal from "./Modal";
-
-import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 const Recipes = () => {

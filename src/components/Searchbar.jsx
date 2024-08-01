@@ -15,19 +15,19 @@ const Searchbar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmittedQuery(query);
-    // console.log(submittedQuery);
-    // searchRecipes();
   };
 
   return (
     <div className="relative flex items-center justify-center">
       <div className="relative text-center text-white">
-        <h1 className="text-4xl font-bold mb-4 ">Cerca Ricette Vegetariane</h1>
+        <h1 className="text-4xl font-bold mb-4 ">
+          Find a good vegeterian recipe!
+        </h1>
         <form>
           <input
             type="text"
             name="search"
-            placeholder="Cerca una ricetta..."
+            placeholder="Search an ingredient"
             className="w-full md:w-1/2 p-2 rounded-lg text-black"
             onChange={handleOnChange}
           />
