@@ -1,15 +1,46 @@
 import React from "react";
 import RecipesCard from "./RecipesCard";
-import { Link } from "react-router-dom";
+import { GlobalContext } from "../store/GlobalContext";
+import Modal from "./Modal";
 
-const Recipes = ({ recipes }) => {
+import { useState, useEffect, useContext } from "react";
+import axios from "axios";
+
+const Recipes = () => {
+  const { submittedQuery, handleError } = useContext(GlobalContext);
+  const [recipes, setRecipes] = useState([]);
+
+  const SPOONACULAR_KEY = import.meta.env.VITE_SPOONACULAR_API_KEY;
+  useEffect(() => {
+    if (submittedQuery !== "") {
+      axios
+        .get(
+          `https://api.spoonacular.com/recipes/complexSearch?query=${submittedQuery}&diet=vegetarian` +
+            `&apiKey=${SPOONACULAR_KEY}`
+        )
+        .then((response) => {
+          const data = response.data.results;
+          setRecipes(data);
+          console.log(submittedQuery);
+        })
+        .catch((error) => {
+          console.error(error.response.data.message);
+          handleError(error);
+        });
+    }
+  }, [submittedQuery]);
+
   return (
-    <div className="grid grid-cols-4 bg-slate-600 p-3">
-      {recipes.map((recipe) => (
-        <Link to={`/RecipesCard/${recipe.id}`} key={recipe.id}>
-          <RecipesCard recipe={recipe} />
-        </Link>
-      ))}
+    <div>
+      {recipes.length === 0 ? (
+        <div></div>
+      ) : (
+        <div className="grid grid-cols-4 bg-lime-900">
+          {recipes.map((recipe) => (
+            <RecipesCard recipe={recipe} key={recipe.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
