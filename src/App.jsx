@@ -9,12 +9,10 @@ import ContextProvider from "./store/GlobalContext";
 function App() {
   return (
     <ContextProvider>
-      <div>
-        <Navbar />
-        <Hero />
-        <Recipes />
-        <Footer />
-      </div>
+      <Navbar />
+      <Hero />
+      <Recipes />
+      <Footer />
     </ContextProvider>
   );
 }

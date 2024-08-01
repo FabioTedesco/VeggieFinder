@@ -6,7 +6,7 @@ const About = () => {
   return (
     <>
       <Navbar />
-      <div className="about-us-container p-8 bg-gray-100 min-h-screen">
+      <div className="about-us-container pt-8 pb-24 bg-gray-100 min-h-screen">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold mb-4">About Us</h1>
           <p className="text-lg mb-6">
