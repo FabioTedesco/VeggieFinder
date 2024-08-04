@@ -4,6 +4,7 @@ import Recipes from "./components/Recipes";
 import Footer from "./components/Footer";
 import { useEffect, useState } from "react";
 import ContextProvider from "./store/GlobalContext";
+import RecipeDetails from "./components/RecipeDetails";
 // import axios from "axios";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <Hero />
       <Recipes />
+
       <Footer />
     </ContextProvider>
   );

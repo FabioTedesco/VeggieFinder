@@ -7,6 +7,7 @@ const ContextProvider = ({ children }) => {
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [recipes, setRecipes] = useState([]);
 
   const handleError = (error) => {
     console.error(error.response.data.message);
@@ -27,6 +28,8 @@ const ContextProvider = ({ children }) => {
           errorMessage,
           setErrorMessage,
           handleError,
+          recipes,
+          setRecipes,
         }}
       >
         {children}

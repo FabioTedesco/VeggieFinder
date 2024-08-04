@@ -2,19 +2,24 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { GlobalContext } from "../store/GlobalContext";
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 const RecipeDetails = () => {
+  const { recipes } = useContext(GlobalContext);
+
+  const { ID } = useParams();
+
   return (
     <>
       <Navbar />
       <div className="flex justify-center items-center">
         <div className=" w-[30%] mx-auto mt-10 border border-gray-200 rounded-lg shadow-md overflow-hidden">
           <div className="p-4 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-center flex-1">
-              Titolo della Card
-            </h2>
+            <h2 className="text-xl font-bold text-center flex-1">Titolo</h2>
             <button>
               <FontAwesomeIcon
                 icon={faHeart}
