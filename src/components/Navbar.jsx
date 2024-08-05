@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="w-max-screen flex justify-between p-3 bg-lime-500 items-center  top-0 left-0 right-0">
-      <div className="underline">Navbar left</div>
+    <nav className="w-max-screen flex justify-between p-3 items-center top-0 left-0 right-0 bg-gradient-to-b from-green-600 to-green-400">
+      <div className="underline">
+        <img
+          src="Assets/icons8-vegetables-48.png"
+          alt="Logo"
+          className="scale-75"
+        />
+      </div>
       <div>
         <ul className="flex mx-5 underline">
           <li className="p-3">
@@ -15,9 +21,6 @@ const Navbar = () => {
           </li>
           <li className="p-3">
             <Link to={"/Contacts"}>Contacts</Link>
-          </li>
-          <li className="p-3">
-            <Link to={"/Favorites"}>Favorites</Link>
           </li>
         </ul>
       </div>

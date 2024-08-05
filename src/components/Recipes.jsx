@@ -30,9 +30,9 @@ const Recipes = () => {
   return (
     <div>
       {recipes.length === 0 ? (
-        <div></div>
+        <div className=" bg-gray-100 h-screen"></div>
       ) : (
-        <div className="grid grid-cols-4 bg-lime-900">
+        <div className="grid grid-cols-4 bg-gradient-to-b from-green-400 to-green-600  pb-32">
           {recipes.map((recipe) => (
             <Link to={`/RecipeDetails/${recipe.id}`} key={recipe.id}>
               <RecipesCard recipe={recipe} />

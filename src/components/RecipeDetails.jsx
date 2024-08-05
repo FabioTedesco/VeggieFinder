@@ -1,12 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import { GlobalContext } from "../store/GlobalContext";
 
 const RecipeDetails = () => {
   const { ID } = useParams();
@@ -31,19 +27,12 @@ const RecipeDetails = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center items-center">
-        <div className=" w-[30%] mx-auto mt-10 border border-gray-200 rounded-lg shadow-md overflow-hidden">
+      <div className="flex justify-center items-center ">
+        <div className=" w-[30%] mx-auto mt-10 border border-gray-400 rounded-2xl shadow-md overflow-hidden">
           <div className="p-4 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-center flex-1">
+            <h2 className="text-xl font-bold text-center flex-1 underline">
               {selectedRecipe.title}
             </h2>
-            <button>
-              <FontAwesomeIcon
-                icon={faHeart}
-                size="lg"
-                className="text-red-500 cursor-pointer"
-              />
-            </button>
           </div>
           <img
             src={selectedRecipe.image}

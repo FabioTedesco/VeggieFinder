@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className=" bg-gray-900 fixed bottom-0 w-full text-white p-4 ">
-      <div className="max-w-2xl mx-auto text-white py-3">
-        <div className=" flex flex-col md:flex-row md:justify-between items-center text-sm text-gray-400">
+    <div className=" bg-green-200 fixed bottom-0 w-full text-black p-2 ">
+      <div className="max-w-2xl mx-auto text-black py-3">
+        <div className=" flex flex-col md:flex-row md:justify-between items-center text-sm text-black">
           <p className="order-2 md:order-1 mt-8 md:mt-0">
             &copy; All rights reserved
           </p>

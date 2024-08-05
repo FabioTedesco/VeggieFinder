@@ -3,7 +3,7 @@ import RecipeDetails from "./RecipeDetails";
 
 const RecipesCard = ({ recipe }) => {
   return (
-    <div className="flex flex-col items-center max-w-sm rounded overflow-hidden shadow-lg bg-slate-200 scale-90">
+    <div className="flex flex-col items-center max-w-sm rounded-2xl overflow-hidden shadow-lg bg-slate-200 scale-90">
       <img
         className="w-4/5 h-48 object-cover rounded mt-2"
         src={recipe.image}
