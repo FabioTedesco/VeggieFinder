@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import RecipesCard from "./RecipesCard";
 import { GlobalContext } from "../store/GlobalContext";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Recipes = () => {
   const { submittedQuery, handleError, recipes, setRecipes } =

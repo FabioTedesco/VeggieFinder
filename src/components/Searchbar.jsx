@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GlobalContext } from "../store/GlobalContext";
 import Modal from "./Modal";
 
 const Searchbar = () => {
-  const { query, setQuery } = useContext(GlobalContext);
-  const { submittedQuery, setSubmittedQuery } = useContext(GlobalContext);
+  const { query, setQuery, setSubmittedQuery } = useContext(GlobalContext);
 
   const handleOnChange = (e) => {
     e.preventDefault();
