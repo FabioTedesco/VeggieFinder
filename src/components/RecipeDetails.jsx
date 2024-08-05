@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
-import { GlobalContext } from "../store/GlobalContext";
+import axios from "axios";
 
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
+import { GlobalContext } from "../store/GlobalContext";
 
 const RecipeDetails = () => {
-  const { recipes } = useContext(GlobalContext);
-
   const { ID } = useParams();
+  const apiKey = import.meta.env.VITE_SPOONACULAR_API_KEY;
+
+  const [selectedRecipe, setSelectedRecipe] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.spoonacular.com/recipes/${ID}/information?apiKey=${apiKey}`
+      )
+      .then((response) => {
+        const data = response.data;
+        setSelectedRecipe(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching recipe details", error);
+      });
+  }, [ID]);
 
   return (
     <>
@@ -19,7 +34,9 @@ const RecipeDetails = () => {
       <div className="flex justify-center items-center">
         <div className=" w-[30%] mx-auto mt-10 border border-gray-200 rounded-lg shadow-md overflow-hidden">
           <div className="p-4 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-center flex-1">Titolo</h2>
+            <h2 className="text-xl font-bold text-center flex-1">
+              {selectedRecipe.title}
+            </h2>
             <button>
               <FontAwesomeIcon
                 icon={faHeart}
@@ -29,18 +46,13 @@ const RecipeDetails = () => {
             </button>
           </div>
           <img
-            src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cmljZXR0YXxlbnwwfHwwfHx8Mg%3D%3D"
+            src={selectedRecipe.image}
             alt="Sample"
             className="w-full h-96 object-cover"
           />
         </div>
-        <p className=" max-w-md mx-auto text-gray-700 text-lg ">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem
-          perspiciatis expedita nesciunt id reprehenderit asperiores esse,
-          dolores vitae magni! Quis quas sapiente, delectus adipisci cum aliquid
-          eius labore impedit numquam non qui magni vero tempora earum saepe
-          quibusdam mollitia esse possimus magnam, doloremque inventore sed
-          dicta ducimus. Ipsum, et dolorum?
+        <p className=" max-w-md mx-auto text-gray-700 text-sm ">
+          {selectedRecipe.instructions}
         </p>
       </div>
 

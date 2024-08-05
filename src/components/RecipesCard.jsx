@@ -1,4 +1,5 @@
 import React from "react";
+import RecipeDetails from "./RecipeDetails";
 
 const RecipesCard = ({ recipe }) => {
   return (

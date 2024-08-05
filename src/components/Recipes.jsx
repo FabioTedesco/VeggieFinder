@@ -19,7 +19,6 @@ const Recipes = () => {
         .then((response) => {
           const data = response.data.results;
           setRecipes(data);
-          console.log(recipes);
         })
         .catch((error) => {
           console.error(error.response.data.message);
