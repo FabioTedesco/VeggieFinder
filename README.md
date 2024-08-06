@@ -1,6 +1,6 @@
 # VeggieFinder
 
-![Immagine Progetto](./public/assets/immagine.png)
+![Immagine Progetto](./public/assets/landingPage.png)
 
 ## Technology Used
 
