@@ -21,11 +21,16 @@ jspm_packages/
 Thumbs.db
 
 
-dist/
+
 build/
 
-.eslintcache
+.eslintrc.cjs
 
 .vite
 
 package-lock.json
+
+tailwind.config.js
+postcss.config.js
+vite.config.js
+
