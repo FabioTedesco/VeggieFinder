@@ -27,20 +27,20 @@ const RecipeDetails = () => {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center items-center ">
-        <div className=" w-[30%] mx-auto mt-10 border border-gray-400 rounded-2xl shadow-md overflow-hidden">
+      <div className="flex flex-col mx-3 md:flex-row justify-center items-center h-screen md:space-y-0 md:space-x-10 ">
+        <div className="w-full sm:w-3/4 md:w-1/2 lg:w-[30%] border border-gray-400 rounded-2xl shadow-md overflow-hidden">
           <div className="p-4 flex items-center justify-between">
-            <h2 className="text-xl font-bold text-center flex-1 underline">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-center flex-1 underline">
               {selectedRecipe.title}
             </h2>
           </div>
           <img
             src={selectedRecipe.image}
             alt="Sample"
-            className="w-full h-96 object-cover"
+            className="w-full h-64 sm:h-72 md:h-80 lg:h-96 object-cover"
           />
         </div>
-        <p className=" max-w-md mx-auto text-gray-700 text-sm ">
+        <p className=" max-w-md mx-auto mt-2 mb-20 lg:mt-0 text-gray-700 text-sm sm:text-base lg:text-lg p-3 ">
           {selectedRecipe.instructions}
         </p>
       </div>

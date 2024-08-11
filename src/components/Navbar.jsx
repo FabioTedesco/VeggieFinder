@@ -5,11 +5,13 @@ const Navbar = () => {
   return (
     <nav className="w-max-screen flex justify-between p-3 items-center top-0 left-0 right-0 bg-gradient-to-b from-green-600 to-green-400">
       <div className="underline">
-        <img
-          src="Assets/icons8-vegetables-48.png"
-          alt="Logo"
-          className="scale-75"
-        />
+        <Link to={"/"}>
+          <img
+            src="/Assets/icons8-vegetables-16.png"
+            alt="Logo"
+            className="scale-150 ml-4"
+          />
+        </Link>
       </div>
       <div>
         <ul className="flex mx-5 underline">
