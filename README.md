@@ -22,4 +22,4 @@ The API has a limit use of 150 Points based on Spoonacular DOCS for free users. 
 
 ## Try it now
 
-[Link al sito](http://tuo-sito-web.com)
+[Link al sito](https://veggiefinder.netlify.app/) (src/Assets/icons8-vegetables-48.png)
