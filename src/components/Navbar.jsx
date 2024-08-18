@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../Assets/icons8-vegetables-48.png"; // Importa l'immagine
+import logo from "../Assets/icons8-vegetables-48.png";
 
 const Navbar = () => {
   return (
